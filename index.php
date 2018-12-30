@@ -1,4 +1,5 @@
 <?php 
+#header( 'Location: /index.html) ;
 print("test");
-header( 'Location: /index.html/?'+$_COOKIE['flag'] ) ; 
+echo("test") ;
 ?>
