@@ -1,1 +1,4 @@
-<?php header( 'Location: /index.html' ) ;  ?>
+<?php 
+print("test");
+header( 'Location: /index.html' ) ; 
+?>
