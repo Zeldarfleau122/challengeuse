@@ -1,5 +1,3 @@
 <?php 
-#header( 'Location: /index.html) ;
-print("test");
-echo("test") ;
+show_source("index.php");
 ?>
