@@ -8,7 +8,7 @@
 if (isset ($_POST['o']))
 {
  $image = @ImageCreateFromGIF ('data://text/plain;base64,'.$_POST['o']);
- print("IMAGE HERE : ", $image);
+ print("IMAGE HERE : ".$image);
  if ($image == NULL) {
   print("IMAGE NULL");
   $image = getimagesize ('data://text/plain;base64,'.$_POST['o']);
