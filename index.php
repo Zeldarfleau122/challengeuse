@@ -14,16 +14,16 @@ if (preg_match('http', $_POST['u']) ) $nice = 0;
 if (preg_match('https', $_POST['u']) ) $nice = 0;
 if (preg_match('ftp', $_POST['u'])) $nice = 0;
 if (preg_match('telnet', $_POST['u'])) $nice = 0;
-print($nice) ;
+print("After preg math : ".$nice) ;
 if ($nice) {
  if (@file_exists ($_POST['u'])) $nice = 0;
  }
-print($nice) ;
+print("after file exist : ".$nice) ;
 if ($nice) {
  $nice = @file_get_contents ($_POST['u']);
  if ($nice === 'Good Work!') nextpart ();
  }
-print($nice) ;
+print("end : ".$nice) ;
 ?>
 <form method="post">
 u: <input type="text" name="u" /><br />
