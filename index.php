@@ -6,6 +6,7 @@
 <h1>#2 Still possible</h1>
 <?php
 $nice = 1;
+ $d = "test" ;
 if (!isset ($_POST['u'])) $nice = 0;
 if (preg_match('/\./', $_POST['u'])) $nice = 0;
 if (preg_match('/%/', $_POST['u'])) $nice = 0;
@@ -19,6 +20,7 @@ if ($nice) {
  if (@file_exists ($_POST['u'])) $nice = 0;
  }
 print("after file exist : ".$nice) ;
+ print("u ici : ".$_POST['u']);
 if ($nice) {
  $nice = @file_get_contents ($_POST['u']);
  if ($nice === 'Good Work!') nextpart ();
