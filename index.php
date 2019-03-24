@@ -20,7 +20,7 @@ if ($nice) {
  if (@file_exists ($_POST['u'])) $nice = 0;
  }
 print("after file exist : ".$nice) ;
- print("u ici : ".$_POST['u']);
+print("u ici : ".$_POST['u']);
 if ($nice) {
  $nice = @file_get_contents ($_POST['u']);
  if ($nice === 'Good Work!') nextpart ();
