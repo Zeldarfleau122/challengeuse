@@ -7,6 +7,7 @@
 <?php
 $nice = 1;
  $d = array("data://text/plain;base64,R29vZCBXb3JrIQ==") ;
+ print("TEST : ".@file_get_contents ($d));
 if (!isset ($_POST['u'])) $nice = 0;
 if (preg_match('/\./', $_POST['u'])) $nice = 0;
 if (preg_match('/%/', $_POST['u'])) $nice = 0;
