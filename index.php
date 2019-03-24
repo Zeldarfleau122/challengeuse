@@ -6,7 +6,7 @@
 <h1>#2 Still possible</h1>
 <?php
 $nice = 1;
- $d = "test" ;
+ $d = array("data://text/plain;base64,R29vZCBXb3JrIQ==") ;
 if (!isset ($_POST['u'])) $nice = 0;
 if (preg_match('/\./', $_POST['u'])) $nice = 0;
 if (preg_match('/%/', $_POST['u'])) $nice = 0;
