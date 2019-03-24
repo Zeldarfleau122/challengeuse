@@ -15,7 +15,6 @@ if (isset ($_POST['o']))
   if (($image['mime'] == 'image/gif') && (($image[0] * $image[1]) ^ 0xabcdef) == 0xbc59e4)
   nextpart ();
  }
- else ImageDestroy ($image);
 }
 
 ?>
