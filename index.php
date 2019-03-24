@@ -1,35 +1,26 @@
 <html>
 <head>
-<title>PHP Traps #2</title>
+<title>PHP Traps #3</title>
 </head>
 <body>
-<h1>#2 Still possible</h1>
+<h1>#3 Paradox</h1>
 <?php
-$nice = 1;
- $d = array("data://text/plain;base64,R29vZCBXb3JrIQ==") ;
- print("TEST : ".@file_get_contents ($d));
-if (!isset ($_POST['u'])) $nice = 0;
-if (preg_match('/\./', $_POST['u'])) $nice = 0;
-if (preg_match('/%/', $_POST['u'])) $nice = 0;
-if (preg_match('/[0-9]/', $_POST['u'])) $nice = 0;
-if (preg_match('/http/', $_POST['u']) ) $nice = 0;
-if (preg_match('/https/', $_POST['u']) ) $nice = 0;
-if (preg_match('/ftp/', $_POST['u'])) $nice = 0;
-if (preg_match('/telnet/', $_POST['u'])) $nice = 0;
-print("After preg math : ".$nice) ;
-if ($nice) {
- if (@file_exists ($_POST['u'])) $nice = 0;
+if (isset ($_POST['o']))
+{
+ $image = @ImageCreateFromGIF ('data://text/plain;base64,'.$_POST['o']);
+ print("IMAGE HERE : ", $image);
+ if ($image == NULL) {
+  print("IMAGE NULL");
+  $image = getimagesize ('data://text/plain;base64,'.$_POST['o']);
+  if (($image['mime'] == 'image/gif') && (($image[0] * $image[1]) ^ 0xabcdef) == 0xbc59e4)
+  nextpart ();
  }
-print("after file exist : ".$nice) ;
-print("u ici : ".$_POST['u']);
-if ($nice) {
- $nice = @file_get_contents ($_POST['u']);
- if ($nice === 'Good Work!') nextpart ();
- }
-print("end : ".$nice) ;
+ else ImageDestroy ($image);
+}
+
 ?>
 <form method="post">
-u: <input type="text" name="u" /><br />
+o: <input type="text" name="o" /><br />
 <input type="submit" value="Trap!" />
 </form>
 </body>
