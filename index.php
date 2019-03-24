@@ -7,13 +7,13 @@
 <?php
 $nice = 1;
 if (!isset ($_POST['u'])) $nice = 0;
-if (preg_match('\.', $_POST['u'])) $nice = 0;
-if (preg_match('%', $_POST['u'])) $nice = 0;
-if (preg_match('[0-9]', $_POST['u'])) $nice = 0;
-if (preg_match('http', $_POST['u']) ) $nice = 0;
-if (preg_match('https', $_POST['u']) ) $nice = 0;
-if (preg_match('ftp', $_POST['u'])) $nice = 0;
-if (preg_match('telnet', $_POST['u'])) $nice = 0;
+if (preg_match('/\./', $_POST['u'])) $nice = 0;
+if (preg_match('/%/', $_POST['u'])) $nice = 0;
+if (preg_match('/[0-9]/', $_POST['u'])) $nice = 0;
+if (preg_match('/http/', $_POST['u']) ) $nice = 0;
+if (preg_match('/https/', $_POST['u']) ) $nice = 0;
+if (preg_match('/ftp/', $_POST['u'])) $nice = 0;
+if (preg_match('/telnet/', $_POST['u'])) $nice = 0;
 print("After preg math : ".$nice) ;
 if ($nice) {
  if (@file_exists ($_POST['u'])) $nice = 0;
