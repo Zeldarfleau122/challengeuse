@@ -1,1 +1,1 @@
-alert('js');
+window.location = "https://google.com"
